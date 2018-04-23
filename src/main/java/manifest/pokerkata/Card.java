@@ -1,6 +1,6 @@
 package manifest.pokerkata;
 
-public class Card {
+public class Card implements Comparable<Object> {
 
 	private String suit;
 	private String value;
@@ -36,4 +36,24 @@ public class Card {
 	public String getValue() {
 		return value;
 	}
+
+	@Override
+	public int compareTo(Object otherCard) {
+		int thisValue = Integer.parseInt(value);
+		int otherValue = Integer.parseInt(((Card) otherCard).getValue());
+
+		if (thisValue < otherValue) {
+			return -1;
+		} else if (thisValue > otherValue) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	@Override
+	public String toString() {
+		return value + suit;
+	}
+
 }
