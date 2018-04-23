@@ -8,9 +8,14 @@ public class Card {
 	public Card(String value, String suit) {
 		this.suit = suit;
 
-		if (value.equals("T")) {
+		switch (value) {
+		case "T":
 			this.value = "10";
-		} else {
+			break;
+		case "J":
+			this.value = "11";
+			break;
+		default:
 			this.value = value;
 		}
 	}
