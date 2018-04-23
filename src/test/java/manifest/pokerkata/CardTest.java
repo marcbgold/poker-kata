@@ -9,8 +9,14 @@ public class CardTest {
 
 	@Test
 	public void cardShouldHaveSuit() {
-		Card card = new Card("S");
+		Card card = new Card("S", "2");
 		assertThat(card.getSuit(), is("S"));
+	}
+	
+	@Test
+	public void cardShouldHaveValue() {
+		Card card = new Card("S", "2");
+		assertThat(card.getValue(), is("2"));
 	}
 	
 }
