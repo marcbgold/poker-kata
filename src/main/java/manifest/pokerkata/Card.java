@@ -23,4 +23,8 @@ public class Card {
 		return value;
 	}
 
+	public String testMethod() {
+		return "this is a test";
+	}
+
 }
