@@ -3,17 +3,19 @@ package manifest.pokerkata;
 public class Card {
 
 	private String suit;
+	private String value;
 
 	public Card(String suit, String value) {
 		this.suit = suit;
+		this.value = value;
 	}
 
-	public Object getSuit() {
+	public String getSuit() {
 		return suit;
 	}
 
-	public Object getValue() {
-		return null;
+	public String getValue() {
+		return value;
 	}
 
 }
