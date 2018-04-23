@@ -5,7 +5,7 @@ public class Card {
 	private String suit;
 	private String value;
 
-	public Card(String suit, String value) {
+	public Card(String value, String suit) {
 		this.suit = suit;
 
 		if (value.equals("T")) {
