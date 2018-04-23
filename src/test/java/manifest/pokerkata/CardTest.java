@@ -43,4 +43,10 @@ public class CardTest {
 		assertThat(card.getValue(), is("13"));
 	}
 
+	@Test
+	public void cardShouldHaveValueOf14ForAce() {
+		Card card = new Card("A", "S");
+		assertThat(card.getValue(), is("14"));
+	}
+
 }
