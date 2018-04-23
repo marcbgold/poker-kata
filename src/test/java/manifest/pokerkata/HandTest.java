@@ -9,9 +9,10 @@ public class HandTest {
 
 	@Test
 	public void handShouldContainCards() {
-		Hand hand = new Hand("2S");
+		Card card = new Card("2", "S");
+		Hand hand = new Hand(card);
 
-		assertThat(hand.getCards(), contains("2S"));
+		assertThat(hand.getCards(), contains(card));
 
 	}
 }
