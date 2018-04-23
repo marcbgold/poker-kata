@@ -22,9 +22,4 @@ public class Card {
 	public String getValue() {
 		return value;
 	}
-
-	public String testMethod() {
-		return "this is a test";
-	}
-
 }
