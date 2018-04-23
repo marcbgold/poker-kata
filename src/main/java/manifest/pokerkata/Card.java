@@ -15,6 +15,9 @@ public class Card {
 		case "J":
 			this.value = "11";
 			break;
+		case "Q":
+			this.value = "12";
+			break;
 		default:
 			this.value = value;
 		}
