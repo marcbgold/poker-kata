@@ -19,4 +19,10 @@ public class CardTest {
 		assertThat(card.getValue(), is("2"));
 	}
 	
+	@Test
+	public void cardShouldHaveValueOf10ForSuitT() {
+		Card card = new Card("S", "T");
+		assertThat(card.getValue(), is("10"));
+	}
+	
 }
