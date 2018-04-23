@@ -9,8 +9,7 @@ public class Hand {
 	private Collection<Card> cards;
 
 	public Hand(Card... cardsInput) {
-		cards = new TreeSet<Card>();
-		cards.addAll(Arrays.asList(cardsInput));
+		cards = new TreeSet<Card>(Arrays.asList(cardsInput));
 	}
 
 	public Collection<Card> getCards() {
