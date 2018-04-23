@@ -12,17 +12,17 @@ public class CardTest {
 		Card card = new Card("S", "2");
 		assertThat(card.getSuit(), is("S"));
 	}
-	
+
 	@Test
 	public void cardShouldHaveValue() {
 		Card card = new Card("S", "2");
 		assertThat(card.getValue(), is("2"));
 	}
-	
+
 	@Test
-	public void cardShouldHaveValueOf10ForSuitT() {
+	public void cardShouldHaveValueOf10ForTen() {
 		Card card = new Card("S", "T");
 		assertThat(card.getValue(), is("10"));
 	}
-	
+
 }

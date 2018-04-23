@@ -7,7 +7,12 @@ public class Card {
 
 	public Card(String suit, String value) {
 		this.suit = suit;
-		this.value = value;
+
+		if (value.equals("T")) {
+			this.value = "10";
+		} else {
+			this.value = value;
+		}
 	}
 
 	public String getSuit() {
@@ -15,6 +20,7 @@ public class Card {
 	}
 
 	public String getValue() {
+
 		return value;
 	}
 
