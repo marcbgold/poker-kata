@@ -4,7 +4,7 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.util.TreeSet;
+import java.util.NavigableSet;
 
 import org.junit.Test;
 
@@ -26,9 +26,11 @@ public class HandTest {
 
 		Hand hand = new Hand(middleCard, highCard, lowCard);
 
-		TreeSet<Card> result = (TreeSet<Card>) hand.getCards();
+		NavigableSet<Card> result = hand.getCards();
+		Card[] resultArray = result.toArray(new Card[0]);
 
-		assertThat(result.descendingSet().first(), is(highCard));
-		assertThat(result.descendingSet().last(), is(lowCard));
+		assertThat(resultArray[0], is(highCard));
+		assertThat(resultArray[1], is(middleCard));
+		assertThat(resultArray[2], is(lowCard));
 	}
 }
