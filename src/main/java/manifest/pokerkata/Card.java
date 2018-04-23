@@ -20,7 +20,6 @@ public class Card {
 	}
 
 	public String getValue() {
-
 		return value;
 	}
 
