@@ -281,4 +281,19 @@ public class HandTest {
 		assertThat(ranking, is(7));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf7ForFourOfAKindInLastFourCards() {
+		Card card1 = new Card("4", "H");
+		Card card2 = new Card("3", "C");
+		Card card3 = new Card("3", "S");
+		Card card4 = new Card("3", "D");
+		Card card5 = new Card("3", "H");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(7));
+	}
+
 }
