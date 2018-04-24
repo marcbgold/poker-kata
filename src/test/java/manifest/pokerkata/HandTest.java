@@ -181,4 +181,19 @@ public class HandTest {
 		assertThat(ranking, is(3));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf3ForThreeOfAKindInCardsThree_Four_Five() {
+		Card card1 = new Card("K", "H");
+		Card card2 = new Card("Q", "C");
+		Card card3 = new Card("T", "S");
+		Card card4 = new Card("T", "D");
+		Card card5 = new Card("T", "C");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(3));
+	}
+
 }
