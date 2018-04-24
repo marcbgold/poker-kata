@@ -91,4 +91,19 @@ public class HandTest {
 		assertThat(ranking, is(1));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf1ForOnePairInCardsFourAndFive() {
+		Card card1 = new Card("T", "H");
+		Card card2 = new Card("5", "C");
+		Card card3 = new Card("3", "S");
+		Card card4 = new Card("2", "D");
+		Card card5 = new Card("2", "S");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(1));
+	}
+
 }
