@@ -196,4 +196,19 @@ public class HandTest {
 		assertThat(ranking, is(3));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf4ForStraight() {
+		Card card1 = new Card("9", "H");
+		Card card2 = new Card("8", "C");
+		Card card3 = new Card("7", "S");
+		Card card4 = new Card("6", "D");
+		Card card5 = new Card("5", "C");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(4));
+	}
+
 }
