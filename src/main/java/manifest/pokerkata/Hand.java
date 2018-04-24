@@ -17,6 +17,7 @@ public class Hand {
 	}
 
 	public int getRanking() {
+
 		return 0;
 	}
 
