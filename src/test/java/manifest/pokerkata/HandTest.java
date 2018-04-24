@@ -30,4 +30,20 @@ public class HandTest {
 		assertThat(cardsFromHand[1], is(middleCard));
 		assertThat(cardsFromHand[2], is(lowCard));
 	}
+
+	@Test
+	public void handShouldHaveDefaultRankingOf0() {
+		Card card1 = new Card("2", "C");
+		Card card2 = new Card("3", "D");
+		Card card3 = new Card("5", "S");
+		Card card4 = new Card("7", "C");
+		Card card5 = new Card("T", "H");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(0));
+
+	}
 }
