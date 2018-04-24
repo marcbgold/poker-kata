@@ -107,8 +107,8 @@ public class Hand {
 	}
 
 	private boolean isAFullHouse() {
-		if (value1 == value2 && value2 == value3 && //
-				value4 == value5) {
+		if ((value1 == value2 && value2 == value3 && value4 == value5) || //
+				(value1 == value2 && value3 == value4 && value4 == value5)) {
 			return true;
 		}
 
