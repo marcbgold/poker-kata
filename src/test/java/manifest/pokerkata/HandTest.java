@@ -9,26 +9,36 @@ public class HandTest {
 
 	@Test
 	public void handShouldContainCards() {
-		Card card = new Card("2", "S");
-		Hand hand = new Hand(card);
+		Card card1 = new Card("2", "C");
+		Card card2 = new Card("3", "D");
+		Card card3 = new Card("5", "S");
+		Card card4 = new Card("7", "C");
+		Card card5 = new Card("T", "H");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
 		Card[] cardsFromHand = hand.getCards();
 
-		assertThat(cardsFromHand[0], is(card));
+		assertThat(cardsFromHand[0], is(card5));
 	}
 
 	@Test
 	public void handShouldPutCardsInDescendingOrderByValue() {
-		Card middleCard = new Card("5", "C");
-		Card highCard = new Card("9", "D");
-		Card lowCard = new Card("2", "S");
+		Card card1 = new Card("2", "C");
+		Card card2 = new Card("3", "D");
+		Card card3 = new Card("5", "S");
+		Card card4 = new Card("7", "C");
+		Card card5 = new Card("T", "H");
 
-		Hand hand = new Hand(middleCard, highCard, lowCard);
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
 
 		Card[] cardsFromHand = hand.getCards();
 
-		assertThat(cardsFromHand[0], is(highCard));
-		assertThat(cardsFromHand[1], is(middleCard));
-		assertThat(cardsFromHand[2], is(lowCard));
+		assertThat(cardsFromHand[0], is(card5));
+		assertThat(cardsFromHand[1], is(card4));
+		assertThat(cardsFromHand[2], is(card3));
+		assertThat(cardsFromHand[3], is(card2));
+		assertThat(cardsFromHand[4], is(card1));
 	}
 
 	@Test

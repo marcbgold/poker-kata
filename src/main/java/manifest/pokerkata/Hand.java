@@ -6,10 +6,21 @@ import java.util.Collections;
 public class Hand {
 
 	private Card[] cards;
+	private int value1;
+	private int value2;
+	private int value3;
+	private int value4;
+	private int value5;
 
 	public Hand(Card... cardsInput) {
 		cards = cardsInput;
 		Arrays.sort(cards, Collections.reverseOrder());
+
+		value1 = cards[0].getPointValue();
+		value2 = cards[1].getPointValue();
+		value3 = cards[2].getPointValue();
+		value4 = cards[3].getPointValue();
+		value5 = cards[4].getPointValue();
 	}
 
 	public Card[] getCards() {
@@ -17,33 +28,51 @@ public class Hand {
 	}
 
 	public int getRanking() {
-		int value1 = cards[0].getPointValue();
-		int value2 = cards[1].getPointValue();
-		int value3 = cards[2].getPointValue();
-		int value4 = cards[3].getPointValue();
-		int value5 = cards[4].getPointValue();
-
 		if (isAStraight()) {
 			return 4;
 		}
 
-		if (value1 == value2 && value2 == value3 || //
-				value2 == value3 && value3 == value4 || //
-				value3 == value4 && value4 == value5) {
+		if (hasThreeOfAKind()) {
 			return 3;
 		}
 
-		if (value1 == value2 && value3 == value4 || //
-				value1 == value2 && value4 == value5 || //
-				value2 == value3 && value4 == value5) {
+		if (hasTwoPairs()) {
 			return 2;
 		}
 
-		if (value1 == value2 || value2 == value3 || value3 == value4 || value4 == value5) {
+		if (hasOnePair()) {
 			return 1;
 		}
 
 		return 0;
+	}
+
+	private boolean hasOnePair() {
+		if (value1 == value2 || value2 == value3 || value3 == value4 || value4 == value5) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private boolean hasTwoPairs() {
+		if (value1 == value2 && value3 == value4 || //
+				value1 == value2 && value4 == value5 || //
+				value2 == value3 && value4 == value5) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private boolean hasThreeOfAKind() {
+		if (value1 == value2 && value2 == value3 || //
+				value2 == value3 && value3 == value4 || //
+				value3 == value4 && value4 == value5) {
+			return true;
+		}
+
+		return false;
 	}
 
 	private boolean isAStraight() {
@@ -52,6 +81,7 @@ public class Hand {
 				return false;
 			}
 		}
+
 		return true;
 	}
 
