@@ -28,6 +28,10 @@ public class Hand {
 	}
 
 	public int getRanking() {
+		if (isAFlush()) {
+			return 5;
+		}
+
 		if (isAStraight()) {
 			return 4;
 		}
@@ -78,6 +82,19 @@ public class Hand {
 	private boolean isAStraight() {
 		for (int i = 0; i < cards.length - 1; i++) {
 			if (cards[i + 1].getPointValue() != cards[i].getPointValue() - 1) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	private boolean isAFlush() {
+		for (int i = 0; i < cards.length - 1; i++) {
+			String currentCardSuit = cards[i].getSuit();
+			String nextCardSuit = cards[i + 1].getSuit();
+
+			if (!currentCardSuit.equals(nextCardSuit)) {
 				return false;
 			}
 		}
