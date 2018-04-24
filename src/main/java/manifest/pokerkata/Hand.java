@@ -23,7 +23,8 @@ public class Hand {
 		int value4 = cards[3].getPointValue();
 		int value5 = cards[4].getPointValue();
 
-		if (value1 == value2 && value3 == value4) {
+		if (value1 == value2 && value3 == value4 || //
+				value1 == value2 && value4 == value5) {
 			return 2;
 		}
 
