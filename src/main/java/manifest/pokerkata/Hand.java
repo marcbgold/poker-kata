@@ -1,19 +1,19 @@
 package manifest.pokerkata;
 
 import java.util.Arrays;
-import java.util.NavigableSet;
-import java.util.TreeSet;
+import java.util.Collections;
 
 public class Hand {
 
-	private TreeSet<Card> cards;
+	private Card[] cards;
 
 	public Hand(Card... cardsInput) {
-		cards = new TreeSet<Card>(Arrays.asList(cardsInput));
+		cards = cardsInput;
+		Arrays.sort(cards, Collections.reverseOrder());
 	}
 
-	public NavigableSet<Card> getCards() {
-		return cards.descendingSet();
+	public Card[] getCards() {
+		return cards;
 	}
 
 }

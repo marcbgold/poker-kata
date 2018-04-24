@@ -1,10 +1,7 @@
 package manifest.pokerkata;
 
-import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-
-import java.util.NavigableSet;
 
 import org.junit.Test;
 
@@ -14,8 +11,9 @@ public class HandTest {
 	public void handShouldContainCards() {
 		Card card = new Card("2", "S");
 		Hand hand = new Hand(card);
+		Card[] cardsFromHand = hand.getCards();
 
-		assertThat(hand.getCards(), contains(card));
+		assertThat(cardsFromHand[0], is(card));
 	}
 
 	@Test
@@ -26,11 +24,10 @@ public class HandTest {
 
 		Hand hand = new Hand(middleCard, highCard, lowCard);
 
-		NavigableSet<Card> result = hand.getCards();
-		Card[] resultArray = result.toArray(new Card[0]);
+		Card[] cardsFromHand = hand.getCards();
 
-		assertThat(resultArray[0], is(highCard));
-		assertThat(resultArray[1], is(middleCard));
-		assertThat(resultArray[2], is(lowCard));
+		assertThat(cardsFromHand[0], is(highCard));
+		assertThat(cardsFromHand[1], is(middleCard));
+		assertThat(cardsFromHand[2], is(lowCard));
 	}
 }
