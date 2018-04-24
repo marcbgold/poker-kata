@@ -296,4 +296,19 @@ public class HandTest {
 		assertThat(ranking, is(7));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf8ForStraightFlush() {
+		Card card1 = new Card("9", "H");
+		Card card2 = new Card("8", "H");
+		Card card3 = new Card("7", "H");
+		Card card4 = new Card("6", "H");
+		Card card5 = new Card("5", "H");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(8));
+	}
+
 }
