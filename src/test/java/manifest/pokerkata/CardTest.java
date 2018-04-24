@@ -16,37 +16,37 @@ public class CardTest {
 	@Test
 	public void cardShouldHaveValue() {
 		Card card = new Card("2", "S");
-		assertThat(card.getValue(), is("2"));
+		assertThat(card.getPointValue(), is(2));
 	}
 
 	@Test
 	public void cardShouldHaveValueOf10ForTen() {
 		Card card = new Card("T", "S");
-		assertThat(card.getValue(), is("10"));
+		assertThat(card.getPointValue(), is(10));
 	}
 
 	@Test
 	public void cardShouldHaveValueOf11ForJack() {
 		Card card = new Card("J", "S");
-		assertThat(card.getValue(), is("11"));
+		assertThat(card.getPointValue(), is(11));
 	}
 
 	@Test
 	public void cardShouldHaveValueOf12ForQueen() {
 		Card card = new Card("Q", "S");
-		assertThat(card.getValue(), is("12"));
+		assertThat(card.getPointValue(), is(12));
 	}
 
 	@Test
 	public void cardShouldHaveValueOf13ForKing() {
 		Card card = new Card("K", "S");
-		assertThat(card.getValue(), is("13"));
+		assertThat(card.getPointValue(), is(13));
 	}
 
 	@Test
 	public void cardShouldHaveValueOf14ForAce() {
 		Card card = new Card("A", "S");
-		assertThat(card.getValue(), is("14"));
+		assertThat(card.getPointValue(), is(14));
 	}
 
 }

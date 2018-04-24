@@ -3,29 +3,31 @@ package manifest.pokerkata;
 public class Card implements Comparable<Object> {
 
 	private String suit;
-	private String value;
+	private String faceValue;
+	private int pointValue;
 
 	public Card(String value, String suit) {
+		faceValue = value;
 		this.suit = suit;
 
 		switch (value) {
 		case "T":
-			this.value = "10";
+			this.pointValue = 10;
 			break;
 		case "J":
-			this.value = "11";
+			this.pointValue = 11;
 			break;
 		case "Q":
-			this.value = "12";
+			this.pointValue = 12;
 			break;
 		case "K":
-			this.value = "13";
+			this.pointValue = 13;
 			break;
 		case "A":
-			this.value = "14";
+			this.pointValue = 14;
 			break;
 		default:
-			this.value = value;
+			this.pointValue = Integer.parseInt(value);
 		}
 	}
 
@@ -33,18 +35,21 @@ public class Card implements Comparable<Object> {
 		return suit;
 	}
 
-	public String getValue() {
-		return value;
+	public String getFaceValue() {
+		return faceValue;
+	}
+
+	public int getPointValue() {
+		return pointValue;
 	}
 
 	@Override
 	public int compareTo(Object otherCard) {
-		int thisValue = Integer.parseInt(value);
-		int otherValue = Integer.parseInt(((Card) otherCard).getValue());
+		int otherValue = ((Card) otherCard).getPointValue();
 
-		if (thisValue < otherValue) {
+		if (pointValue < otherValue) {
 			return -1;
-		} else if (thisValue > otherValue) {
+		} else if (pointValue > otherValue) {
 			return 1;
 		} else {
 			return 0;
@@ -53,7 +58,7 @@ public class Card implements Comparable<Object> {
 
 	@Override
 	public String toString() {
-		return value + suit;
+		return pointValue + suit;
 	}
 
 }
