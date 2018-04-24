@@ -251,4 +251,19 @@ public class HandTest {
 		assertThat(ranking, is(6));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf6ForFullHouseWithOnePairThenThreeOfAKind() {
+		Card card1 = new Card("3", "H");
+		Card card2 = new Card("3", "C");
+		Card card3 = new Card("2", "S");
+		Card card4 = new Card("2", "D");
+		Card card5 = new Card("2", "C");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(6));
+	}
+
 }
