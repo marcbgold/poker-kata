@@ -16,4 +16,8 @@ public class Hand {
 		return cards;
 	}
 
+	public int getRanking() {
+		return 0;
+	}
+
 }
