@@ -28,6 +28,10 @@ public class Hand {
 	}
 
 	public int getRanking() {
+		if (isAFullHouse()) {
+			return 6;
+		}
+
 		if (isAFlush()) {
 			return 5;
 		}
@@ -100,6 +104,15 @@ public class Hand {
 		}
 
 		return true;
+	}
+
+	private boolean isAFullHouse() {
+		if (value1 == value2 && value2 == value3 && //
+				value4 == value5) {
+			return true;
+		}
+
+		return false;
 	}
 
 }
