@@ -121,4 +121,19 @@ public class HandTest {
 		assertThat(ranking, is(2));
 	}
 
+	@Test
+	public void handShouldHaveRankingOf2ForTwoPairInCardsOne_TwoAndFour_Five() {
+		Card card1 = new Card("T", "H");
+		Card card2 = new Card("T", "C");
+		Card card3 = new Card("3", "S");
+		Card card4 = new Card("2", "D");
+		Card card5 = new Card("2", "S");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(2));
+	}
+
 }
