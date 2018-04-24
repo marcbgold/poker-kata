@@ -19,8 +19,9 @@ public class Hand {
 	public int getRanking() {
 		int value1 = cards[0].getPointValue();
 		int value2 = cards[1].getPointValue();
+		int value3 = cards[2].getPointValue();
 
-		if (value1 == value2) {
+		if (value1 == value2 || value2 == value3) {
 			return 1;
 		}
 
