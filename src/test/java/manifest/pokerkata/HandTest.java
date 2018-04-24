@@ -47,7 +47,7 @@ public class HandTest {
 	}
 
 	@Test
-	public void handShouldHaveRankingOf1ForOnePairInCardsOneAndTwo() {
+	public void handShouldHaveRankingOf1ForOnePairInCardsOne_Two() {
 		Card card1 = new Card("T", "H");
 		Card card2 = new Card("T", "C");
 		Card card3 = new Card("5", "C");
@@ -62,7 +62,7 @@ public class HandTest {
 	}
 
 	@Test
-	public void handShouldHaveRankingOf1ForOnePairInCardsTwoAndThree() {
+	public void handShouldHaveRankingOf1ForOnePairInCardsTwo_Three() {
 		Card card1 = new Card("T", "H");
 		Card card2 = new Card("5", "C");
 		Card card3 = new Card("5", "D");
@@ -77,7 +77,7 @@ public class HandTest {
 	}
 
 	@Test
-	public void handShouldHaveRankingOf1ForOnePairInCardsThreeAndFour() {
+	public void handShouldHaveRankingOf1ForOnePairInCardsThree_Four() {
 		Card card1 = new Card("T", "H");
 		Card card2 = new Card("5", "C");
 		Card card3 = new Card("3", "S");
@@ -92,7 +92,7 @@ public class HandTest {
 	}
 
 	@Test
-	public void handShouldHaveRankingOf1ForOnePairInCardsFourAndFive() {
+	public void handShouldHaveRankingOf1ForOnePairInCardsFour_Five() {
 		Card card1 = new Card("T", "H");
 		Card card2 = new Card("5", "C");
 		Card card3 = new Card("3", "S");
@@ -149,6 +149,21 @@ public class HandTest {
 		int ranking = hand.getRanking();
 
 		assertThat(ranking, is(2));
+	}
+
+	@Test
+	public void handShouldHaveRankingOf3ForThreeOfAKindInCardsOne_Two_Three() {
+		Card card1 = new Card("T", "H");
+		Card card2 = new Card("T", "C");
+		Card card3 = new Card("T", "S");
+		Card card4 = new Card("3", "D");
+		Card card5 = new Card("2", "S");
+
+		Hand hand = new Hand(card1, card2, card3, card4, card5);
+
+		int ranking = hand.getRanking();
+
+		assertThat(ranking, is(3));
 	}
 
 }
