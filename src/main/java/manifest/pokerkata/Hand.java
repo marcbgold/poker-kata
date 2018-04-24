@@ -23,6 +23,10 @@ public class Hand {
 		int value4 = cards[3].getPointValue();
 		int value5 = cards[4].getPointValue();
 
+		if (isAStraight()) {
+			return 4;
+		}
+
 		if (value1 == value2 && value2 == value3 || //
 				value2 == value3 && value3 == value4 || //
 				value3 == value4 && value4 == value5) {
@@ -40,6 +44,15 @@ public class Hand {
 		}
 
 		return 0;
+	}
+
+	private boolean isAStraight() {
+		for (int i = 0; i < cards.length - 1; i++) {
+			if (cards[i + 1].getPointValue() != cards[i].getPointValue() - 1) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
