@@ -28,6 +28,10 @@ public class Hand {
 	}
 
 	public int getRanking() {
+		if (isAStraight() && isAFlush()) {
+			return 8;
+		}
+
 		if (hasFourOfAKind()) {
 			return 7;
 		}
