@@ -28,6 +28,10 @@ public class Hand {
 	}
 
 	public int getRanking() {
+		if (hasFourOfAKind()) {
+			return 7;
+		}
+
 		if (isAFullHouse()) {
 			return 6;
 		}
@@ -109,6 +113,14 @@ public class Hand {
 	private boolean isAFullHouse() {
 		if ((value1 == value2 && value2 == value3 && value4 == value5) || //
 				(value1 == value2 && value3 == value4 && value4 == value5)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	private boolean hasFourOfAKind() {
+		if (value1 == value2 && value2 == value3 && value3 == value4) {
 			return true;
 		}
 
